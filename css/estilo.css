@@ -1,0 +1,307 @@
+:root {
+    --bg-body: #f1f1f1;
+    --bg-card: #f5f5f5;
+    --bg-secondary: #ebeaea;
+    --bg-input: #fff;
+
+    --text-primary: #333;
+    --text-secondary: #555;
+
+    --border: #ccc;
+
+    --primary: #0059ffe3;
+    --primary-hover: #0046c7e3;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-secondary: #2a2a2a;
+    --bg-input: #252525;
+
+    --text-primary: #f1f1f1;
+    --text-secondary: #bbb;
+
+    --border: #444;
+
+    --primary: #3d7eff;
+    --primary-hover: #1f5dcc;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+header {
+    padding: 22px;
+    background: var(--primary);
+    color: var(--bg-body);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+/* ===== ÁREA DE CADASTRO ===== */
+.top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.3fr auto;
+    gap: 10px;
+    background-color: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--border);
+}
+
+/* ===== INPUTS E SELECT ===== */
+.top input,
+.top select,
+.search input {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* Estiliza apenas quando o campo estiver selecionado */
+.top input:focus,
+.top select:focus,
+.search input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* ===== BOTÕES ===== */
+button {
+    border: none;
+    border-radius: 7px;
+    background-color: var(--primary);
+    color: var(--bg-input);
+    padding: 0 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ===== ÁREA DE PESQUISA ===== */
+.search {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px var(--border);
+}
+
+.search input {
+    flex: 1;
+}
+
+/* ===== STATUS ===== */
+#status {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#status h3 {
+    background-color: var(--bg-secondary);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+#status span {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+/* ===== LISTA DE TAREFAS ===== */
+#list {
+    list-style: none;
+}
+
+#list li {
+    background-color: var(--bg-card);
+    margin-bottom: 12px;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px var(--border);
+    transition: 0.2s;
+}
+
+#list li:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* ===== CONTEÚDO DA TAREFA ===== */
+.compaContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.campoTarefas {
+    flex: 1;
+}
+
+.campoTarefas h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.campoTarefas p {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top: 5px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ===== TAREFA CONCLUÍDA ===== */
+.concluida {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* ===== AÇÕES ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.actions span {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+/* Concluir */
+.iconConcluido {
+    background-color: var(--primary);
+    color: var(--bg-input);
+}
+
+.iconConcluido:hover {
+    background-color: var(--primary-hover);;
+}
+
+/* Editar */
+.iconEdit {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.iconEdit:hover {
+    background-color: var(--border);
+}
+
+/* Remover */
+.iconRemover {
+    background-color: var(--border);
+    color: var(--text-primary);
+}
+
+.iconRemover:hover {
+    background-color: var(--primary-hover);
+    color: var(--bg-input);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 800px) {
+    .top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .top input[type="text"]:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .top button {
+        height: 42px;
+    }
+
+    #status {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .top {
+        grid-template-columns: 1fr;
+    }
+
+    .top input[type="text"]:first-child {
+        grid-column: auto;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    .search button {
+        height: 42px;
+    }
+
+    .compaContent {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions {
+        justify-content: flex-end;
+    }
+
+    .campoTarefas p {
+        display: block;
+    }
+}

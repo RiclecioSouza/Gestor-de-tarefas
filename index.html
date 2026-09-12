@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Gestor de Tarefas</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gestor de Tarefas</h1>
+
+        <button onclick="toggleDarkMode()">
+            🌙
+        </button>
+    </header>
+
+    <main>
+        <div class="top">
+            <input type="text" id="tarefa" placeholder="Nova tarefa">
+
+            <select name="" id="prioridade">
+                <option>Baixa</option>
+                <option>Média</option>
+                <option>Alta</option>
+            </select>
+
+            <input type="date" name="" id="data">
+            <input type="text" id="categoria" placeholder="Categoria">
+
+            <button id="btnPush">Adicionar</button>
+        </div>
+
+        <div class="search">
+            <input type="text" name="" id="search" placeholder="Pesquisar...">
+            <!-- <button id="btnFiltro">Verificar</button> -->
+        </div>
+
+        <div id="status">
+            <h3>Total: <span id="total">0</span></h3>
+            <h3>Concluído: <span id="concluido">0</span></h3>
+            <h3>Pendente: <span id="pendente">0</span></h3>
+        </div>
+
+        <div id="list"></div>
+
+        <script src=""></script>
+    </main>
+</body>
+</html>
