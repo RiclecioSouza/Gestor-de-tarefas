@@ -53,6 +53,11 @@ header {
     justify-content: space-between;
 }
 
+header > button{
+    padding: 8px 10px;
+    box-shadow: 0px 3px 6px var(--primary-hover);
+}
+
 main {
     width: 90%;
     max-width: 1000px;
