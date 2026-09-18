@@ -56,7 +56,7 @@ function renderizarTarefas() {
         const index = tarefas.indexOf(tarefa);
         const li = document.createElement("li");
         li.innerHTML = `
-            <div class="compaContent">
+            <div class="campoContent">
                 <div class="campoTarefas">
                     <h3 class="${tarefa.concluida ? "concluida" : ""}">
                         ${tarefa.titulo}

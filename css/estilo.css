@@ -175,7 +175,7 @@ button:active {
 }
 
 /* ===== CONTEÚDO DA TAREFA ===== */
-.compaContent {
+.campoContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -293,11 +293,15 @@ button:active {
         flex-direction: column;
     }
 
+    .search #search{
+        padding: 8px;
+    }
+
     .search button {
         height: 42px;
     }
 
-    .compaContent {
+    .campoContent {
         flex-direction: column;
         align-items: stretch;
     }
