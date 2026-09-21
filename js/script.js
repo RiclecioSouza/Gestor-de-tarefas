@@ -123,7 +123,7 @@ function deleteTarefa(index) {
 
 // Função para marcar uma tarefa como concluida
 function concluirTarefa(index) {
-    tarefas[index].concluida = true;
+    tarefas[index].concluida = !tarefas[index].concluida;
 
     localStorage.setItem(
         "tarefas",
