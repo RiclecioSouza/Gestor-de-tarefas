@@ -16,35 +16,55 @@
         </button>
     </header>
 
-    <main>
-        <div class="top">
-            <input type="text" id="tarefa" placeholder="Nova tarefa">
+    <div class="layout">
+        <aside class="sidebar">
+            <h2>TaskFlow</h2>
 
-            <select name="" id="prioridade">
-                <option>Baixa</option>
-                <option>Média</option>
-                <option>Alta</option>
-            </select>
+            <nav aria-label="Navegação TaskFlow">
+                <button class="nav-item ativo" data-filtro="todas">
+                    Todas as tarefas
+                </button>
 
-            <input type="date" name="" id="data">
-            <input type="text" id="categoria" placeholder="Categoria">
+                <button class="nav-item" data-filtro="pendentes">
+                    Pendentes
+                </button>
 
-            <button id="btnPush">Adicionar</button>
-        </div>
+                <button class="nav-item" data-filtro="concluidas">
+                    Concluídas
+                </button>
+            </nav>
+        </aside>
 
-        <div class="search">
-            <input type="text" name="" id="search" placeholder="Pesquisar...">
-        </div>
+        <main class="content">
+            <div class="top">
+                <input type="text" id="tarefa" placeholder="Nova tarefa">
 
-        <div id="status">
-            <h3>Total: <span id="total">0</span></h3>
-            <h3>Concluído: <span id="concluido">0</span></h3>
-            <h3>Pendente: <span id="pendente">0</span></h3>
-        </div>
+                <select name="" id="prioridade">
+                    <option>Baixa</option>
+                    <option>Média</option>
+                    <option>Alta</option>
+                </select>
 
-        <div id="list"></div>
+                <input type="date" name="" id="data">
+                <input type="text" id="categoria" placeholder="Categoria">
 
-        <script type="module" src="js/script.js"></script>
-    </main>
+                <button id="btnPush">Adicionar</button>
+            </div>
+
+            <div class="search">
+                <input type="text" name="" id="search" placeholder="Pesquisar...">
+            </div>
+
+            <div id="status">
+                <h3>Total: <span id="total">0</span></h3>
+                <h3>Concluído: <span id="concluido">0</span></h3>
+                <h3>Pendente: <span id="pendente">0</span></h3>
+            </div>
+
+            <div id="list"></div>
+        </main>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>

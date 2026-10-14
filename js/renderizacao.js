@@ -1,5 +1,12 @@
 import {tarefas} from "./dados.js";
 
+let filtroAtual = "todas";
+
+export function aplicarFiltro(filtro) {
+    filtroAtual = filtro;
+    renderizarTarefas();
+}
+
 const inptSearch = document.getElementById("search");
 inptSearch.addEventListener("input", () => {
     renderizarTarefas();
@@ -11,9 +18,19 @@ export function renderizarTarefas() {
 
     
     const search = inptSearch.value.toLowerCase().trim();
-    const tarefasFiltradas = tarefas.filter(tarefa => 
-        tarefa.titulo.toLowerCase().includes(search)
-    );
+
+    const tarefasFiltradas = tarefas.filter(tarefa =>{
+        const correspondeBusca = tarefa.titulo
+            .toLowerCase()
+            .includes(search);
+
+        const correspondeFiltro = 
+            filtroAtual === "todas" || 
+            (filtroAtual === "pendentes" && !tarefa.concluida) || 
+            (filtroAtual === "concluidas" && tarefa.concluida);
+
+        return correspondeBusca && correspondeFiltro;
+    });
 
     tarefasFiltradas.forEach((tarefa) => {
         const index = tarefas.indexOf(tarefa);
