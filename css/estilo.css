@@ -300,60 +300,340 @@ button:active {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 800px) {
-    .top {
-        grid-template-columns: 1fr 1fr;
+/* Tablets e telas menores */
+@media (max-width: 900px) {
+    .layout {
+        width: 94%;
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 16px;
     }
 
-    .top input[type="text"]:first-child {
+    .sidebar {
+        padding: 15px;
+    }
+
+    .top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 16px;
+    }
+
+    /* Campo de título */
+    .top #tarefa {
         grid-column: 1 / -1;
     }
 
-    .top button {
-        height: 42px;
+    /* Botão de adicionar */
+    .top #btnPush {
+        min-height: 42px;
     }
 
+    /* Indicadores */
     #status {
-        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    #status h3 {
+        padding: 12px 8px;
+        font-size: 14px;
     }
 }
 
-@media (max-width: 550px) {
-    main {
-        width: 95%;
-        margin: 20px auto;
+/* Tablets menores e celulares */
+@media (max-width: 700px) {
+    /* Cabeçalho */
+    header {
+        padding: 18px 5%;
+        gap: 12px;
     }
 
+    header h1 {
+        font-size: 22px;
+    }
+
+    header > button {
+        flex-shrink: 0;
+    }
+
+    /* Layout principal */
+    .layout {
+        width: 92%;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        margin: 18px auto;
+    }
+
+    /* Navegação */
+    .sidebar {
+        padding: 15px;
+        min-width: 0;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 12px;
+        font-size: 20px;
+    }
+
+    .sidebar nav {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .sidebar .nav-item {
+        flex: 0 0 auto;
+        min-height: 42px;
+        text-align: center;
+        white-space: nowrap;
+        padding: 10px 14px;
+    }
+
+    /* Conteúdo */
+    .content {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    /* Cadastro */
     .top {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 15px;
     }
 
-    .top input[type="text"]:first-child {
-        grid-column: auto;
+    .top input,
+    .top select {
+        width: 100%;
+        min-width: 0;
     }
 
+    .top #tarefa,
+    .top #btnPush {
+        grid-column: 1 / -1;
+    }
+
+    .top #btnPush {
+        min-height: 44px;
+    }
+
+    /* Pesquisa */
     .search {
-        flex-direction: column;
+        margin-top: 15px;
+        padding: 12px;
     }
 
-    .search #search{
-        padding: 8px;
+    .search input {
+        width: 100%;
+        min-width: 0;
     }
 
-    .search button {
-        height: 42px;
+    /* Indicadores */
+    #status {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin: 15px 0;
     }
 
-    .campoTarefas{
-        flex-direction: column;
-        align-items: stretch;
+    #status h3 {
+        padding: 12px 5px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
     }
 
-    .actions {
-        justify-content: flex-end;
+    #status span {
+        display: block;
+        margin-top: 5px;
+        font-size: 19px;
+    }
+
+    /* Cartões de tarefas */
+    #list li {
+        padding: 15px;
+    }
+
+    .campoContent {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .campoTarefas {
+        min-width: 0;
+    }
+
+    .campoTarefas h3 {
+        font-size: 16px;
+        overflow-wrap: anywhere;
     }
 
     .campoTarefas p {
-        display: block;
+        margin-right: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .actions {
+        flex-shrink: 0;
+        gap: 6px;
+    }
+
+    .actions span {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    header {
+        padding: 16px 4%;
+    }
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    header > button {
+        padding: 8px;
+    }
+
+    .layout {
+        width: 94%;
+        margin: 14px auto;
+        gap: 14px;
+    }
+
+    .sidebar {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 18px;
+    }
+
+    .sidebar .nav-item {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+
+    /* Cadastro em uma coluna */
+    .top {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .top #tarefa,
+    .top #btnPush {
+        grid-column: auto;
+    }
+
+    .top input,
+    .top select {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .top #btnPush {
+        width: 100%;
+    }
+
+    /* Pesquisa */
+    .search {
+        padding: 10px;
+    }
+
+    .search input {
+        height: 42px;
+        padding: 0 10px;
+    }
+
+    /* Indicadores */
+    #status {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    #status h3 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    #status span {
+        display: inline;
+        margin-top: 0;
+        font-size: 18px;
+    }
+
+    /* Tarefas */
+    #list li {
+        padding: 12px;
+    }
+
+    .campoContent {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .campoTarefas {
+        width: 100%;
+    }
+
+    .campoTarefas h3 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .campoTarefas p {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    /* Botões de ação */
+    .actions {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+
+    .actions span {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 17px;
+    }
+
+    .layout {
+        width: 96%;
+    }
+
+    .sidebar nav{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top {
+        padding: 10px;
+    }
+
+    #status h3 {
+        font-size: 13px;
+    }
+
+    .campoContent {
+        gap: 10px;
+    }
+
+    .actions span {
+        width: 36px;
+        height: 36px;
     }
 }
